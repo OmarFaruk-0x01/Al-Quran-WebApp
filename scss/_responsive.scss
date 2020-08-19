@@ -1,0 +1,275 @@
+@media screen and (max-width: 960px) {
+  .all-surah_div {
+    width: 350px;
+
+    &.selected{
+      height: 240px;
+    }
+  }
+  .surah {
+      
+    flex-direction: column-reverse;
+    .arabic-name {
+      width: 100%;
+      text-align: right;
+    }
+    &-plane_text {
+      width: 100%;
+      text-align: left;
+    }
+  }
+  div.bookmark-div.open div.section-items > .surah{
+      flex-direction: row;
+      .ayat-no {
+          display: flex;
+          align-items: center;
+        width: fit-content;
+        .no{
+            margin-left: 10px;
+        }
+      }
+    
+  }
+
+  .all-ayah_div {
+    width: calc(100% - 350px - 15px - 15px - 15px);
+  }
+}
+@media screen and (max-width: 750px) {
+  body {
+    scroll-behavior: smooth;
+    overflow-y: auto;
+    background-color: none !important;
+  }
+
+  header {
+    flex-direction: column;
+    .logo {
+      width: 100%;
+      text-align: center;
+    }
+  }
+  .nav {
+    margin-top: 20px;
+    width: 100%;
+    position: relative;
+    &-bookmark {
+      position: absolute;
+      left: 0;
+    }
+    &-menu__list {
+      // position: absolute;
+      width: 100%;
+      align-self: flex-start;
+      justify-self: flex-start;
+      margin-left: 60px;
+    }
+    &-searchBar {
+      position: absolute !important;
+      right: 0;
+    }
+    // flex-direction: column;
+  }
+
+  .all-surah_div {
+    width: calc(100% - 30px);
+    margin-right: 15px;
+    float: none;
+
+    .surah {
+      flex-direction: column-reverse;
+      .arabic-name {
+        width: 100%;
+        text-align: right;
+      }
+      &-plane_text {
+        width: 100%;
+        text-align: left;
+      }
+    }
+  }
+  .all-ayah_div {
+    .wraper{
+      width: 100%;
+      height: fit-content;
+      position: sticky;
+      top: 20px;
+    background: white;
+    z-index: 10;
+    padding: 10px;
+    }
+    .all-play-btn{
+      top: 60px;
+    }
+    // .surah-info{
+    //   position: sticky;
+    //   top: 20px;
+    // }
+
+  .bismillah{
+    font-size: 60px;
+  }
+    #ayah-count {
+      // position: sticky !important;
+      // top: 75px !important;
+      margin: 0px 20px;
+    }
+    margin: 0;
+    width: 100%;
+    height: 100%;
+    margin-top: 40px;
+    clear: both;
+    float: none;
+    max-height: none;
+  }
+  
+}
+
+@media screen and (max-width: 550px) {
+  header {
+    .logo {
+      text-align: left;
+    }
+
+    .nav {
+        @include transition_all;
+      height: 0;
+      overflow: hidden;
+      margin-top: 20px;
+      width: 100%;
+      position: relative;
+      &-bookmark {
+        bottom: 0;
+      }
+      &-menu__list {
+        // position: absolute;
+        flex-direction: column;
+        width: 100%;
+        align-self: flex-start;
+        justify-self: flex-start;
+        // margin-top: 60px;
+        margin-left: 0;
+        margin-bottom: 60px;
+        li {
+          margin-bottom: 10px;
+        }
+      }
+      &-searchBar {
+        bottom: 0;
+        width: 80%;
+        input[type="text"] {
+          padding: 0 40px 0 20px;
+          transition-delay: 0s;
+        }
+      }
+
+      &bar-btn {
+        @include transition_all;
+        position: absolute;
+        top: 50px;
+        right: 30px;
+        display: flex;
+        flex-direction: row-reverse;
+        justify-content: center;
+        align-items: center;
+        &.active {
+          transform: rotate(-90deg);
+          & + .nav{
+              height: 165px;
+          }
+        }
+        span {
+          display: block;
+          width: 10px;
+          height: 10px;
+          border-radius: 50%;
+          background-color: $primary;
+          margin-left: 2px;
+          @for $i from 1 through 3 {
+            &:nth-child(#{$i}) {
+              width: $i * 2 + 5px;
+              height: $i * 2 + 5px;
+            }
+          }
+        }
+      }
+    }
+  }
+  div.bookmark-div.open div.section-items > .surah{
+      width: 100%;
+  }
+}
+@media screen and (max-width: 500px) {
+    header{
+        padding-left: 10px;
+        input[type=search]{
+          padding: 0 40px 0 20px;
+        }
+    }
+  .all-ayah_div {
+    .ayah {
+      padding: 10px 10px;
+      padding-top: 30px;
+    }
+    .bangla-text,
+    .english-text {
+      margin-left: 10px;
+    }
+    .arabic-text {
+      p {
+        font-size: 2rem;
+      }
+    }
+    .social-icons {
+      position: relative;
+      top: 0;
+      left: 0;
+      display: flex;
+      align-items: center;
+      justify-content: left;
+      margin-top: 20px;
+
+      .icons {
+        margin-left: 10px;
+      }
+    }
+  }
+}
+
+
+@media screen and (max-width: 400px){
+  header {
+    .logo{
+      font-size: 1.3rem;
+    }
+    .navbar-btn{
+      top: 43px;
+    }
+  }
+  body{
+    font-size: 1rem;
+  }
+  .all-surah_div--header{
+    flex-direction: column;
+    [for=allsurah]{
+      display: block;
+      align-self: flex-start !important;
+    }
+    select{
+      position: relative;
+      top: 0;
+      left: 0;
+      margin-top: 5px;
+      align-self: baseline;
+    }
+    .all-surah-nav{
+      position: absolute;
+      right: 20px;
+    }
+  }
+
+  .bismillah{
+    font-size: 1rem;
+  }
+
+}

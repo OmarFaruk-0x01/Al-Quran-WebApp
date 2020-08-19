@@ -1,0 +1,96 @@
+.all-surah_div{
+    position: relative;
+    background-color: $trans-sec;
+    display: flex;
+    width: 454px;
+    max-height: 600px;
+    flex-direction: column;
+    float: left;
+    margin-left: 15px;
+    border-radius: 10px;
+
+    &.selected{
+        height: 170px;
+    }
+    &.open{
+        .surahs{
+            height: 78vh;
+            max-height: 78vh;
+            overflow-y: auto;
+            padding: 10px 0;
+            margin: 5px 0;
+        }
+        &--header{
+            span{
+                display: inline-block; 
+                transform: rotate(45deg);
+            }
+        }
+    }
+    .surahs{
+        @include transition_all(.1s);
+        max-height: 0;
+        overflow-y: auto;
+        overflow-x: hidden;
+        scroll-behavior: smooth;
+        
+        
+        width: 100%;
+    }
+    &--header{
+        padding: 20px 15px;
+        display: flex;
+        justify-content: space-between;
+        align-items: center;
+        color: $primary;
+        
+        label{
+            font-size: 1.3rem;
+            font-weight: 500;
+            color: #025257;
+        }
+        
+    }
+   
+}
+.surah{
+    @include transition_all(.3s);
+    background-color: $white;
+    margin: 10px 10px;
+    padding: 10px;
+    border-radius: 10px;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    font-size: 2rem;
+    &.active{
+        box-shadow: 1px 1px 3px $primary,
+                -1px -1px 3px $primary;
+    }
+    &-plane_text{
+        display: flex;
+        align-items: center;
+    }
+    &_number{
+        color: $third;
+        font-size: 1.3rem;
+    }
+    &-title{
+        margin-left: 10px;
+    }
+    &-name{
+        color: $primary;
+        font-weight: 600;
+        font-size: 1.4rem;
+    }
+
+    &-meaning{
+        color: $third;
+        font-size: 1rem;
+        font-weight: 500;
+    }
+
+    .arabic-name{
+        font-size: 2.2rem;
+    }
+}

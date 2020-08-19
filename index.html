@@ -1,0 +1,182 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <meta
+      name="Description"
+      content="A Web Application of Al-Quran. The gretest book off the world ever also a miracel of the world. The motive of this WebApp is to learn easer way. It provides you pronunciation of each arabic word with English and Bengli with whole recitation"
+    />
+    <title>Al-Quran</title>
+    <link
+      async
+      href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700;800&display=swap"
+      rel="stylesheet"
+      rel="preload"
+    />
+    <!-- <link rel="stylesheet" href="css/main.css" /> -->
+    <link async rel="stylesheet" href="css/main.min.css" />
+    <link async rel="stylesheet" href="assets/style.css" />
+    <link async rel="stylesheet" href="assets/ie7/ie7.css" />
+    <link
+      rel="shortcut icon"
+      href="assets/img/favicon-16x16.png"
+      type="image/x-icon"
+    />
+
+    <link rel="manifest" href="/manifest.json" />
+
+    <meta name="mobile-web-app-capable" content="yes" />
+    <meta name="apple-mobile-web-app-capable" content="yes" />
+    <meta name="application-name" content="Al-Quran PWA" />
+    <meta name="apple-mobile-web-app-title" content="Al-Quran PWA" />
+    <meta name="theme-color" content="#1e8288" />
+    <meta name="msapplication-navbutton-color" content="#1e8288" />
+    <meta
+      name="apple-mobile-web-app-status-bar-style"
+      content="black-translucent"
+    />
+    <meta name="msapplication-starturl" content="/index.html" />
+
+    <link rel="icon" href="./assets/img/icon-512x512.png" />
+    <link rel="apple-touch-icon" href="/assets/img/icon-192x192.png" />
+  </head>
+  <body>
+    <div class="root">
+      <div class="bookmark-div">
+        <span class="close-btn"><i class="icon ico-cross"></i></span>
+        <div class="cetagory-scroller">
+          <div class="cetagory-section">
+            <div class="section-header">
+              <h2>Unauthorized Cetagory</h2>
+            </div>
+            <div class="section-items"></div>
+          </div>
+        </div>
+      </div>
+      <div class="setting">
+        <div class="setting-btn icon ico-cogs"></div>
+
+        <div class="setting-font_size">
+          <div class="setting-header">
+            <span>Font Setting</span>
+          </div>
+
+          <div class="lang-font">
+            <span id="arabic-font-minus" class="icon ico-minus"></span>
+            <span class="text">Arabic-Font</span>
+            <span
+              id="arabic-font-plus"
+              class="icon ico-cross"
+              style="transform: rotate(-45deg);"
+            ></span>
+          </div>
+          <div class="lang-font">
+            <span id="bn-font-minus" class="icon ico-minus"></span>
+            <span class="text">Bangla-Font</span>
+            <span
+              id="bn-font-plus"
+              class="icon ico-cross"
+              style="transform: rotate(-45deg);"
+            ></span>
+          </div>
+          <div class="lang-font">
+            <span id="eng-font-minus" class="icon ico-minus"></span>
+            <span class="text">English-Font</span>
+            <span
+              id="eng-font-plus"
+              class="icon ico-cross"
+              style="transform: rotate(-45deg);"
+            ></span>
+          </div>
+        </div>
+      </div>
+      <header>
+        <div class="logo">
+          The Novel Quran
+        </div>
+        <div class="navbar-btn">
+          <span></span>
+          <span></span>
+          <span></span>
+        </div>
+        <nav class="nav">
+          <div class="nav-bookmark">
+            <i class="icon ico-heart"></i>
+          </div>
+          <ul class="nav-menu__list">
+            <li><a class="menu active" href="#">Home</a></li>
+            <li><a class="menu" href="#">Salah</a></li>
+            <li><a class="menu" href="#">Audio</a></li>
+          </ul>
+          <div class="nav-searchBar">
+            <input type="search" placeholder="ex: Al-Fatihah" id="search" />
+            <label for="search" class="nav-searchBar__btn">
+              <i class="icon ico-search"></i>
+              s
+            </label>
+          </div>
+        </nav>
+      </header>
+
+      <div class="all-surah_div open">
+        <div class="loader">
+          <span><i class="icon ico-spinner"></i></span>
+        </div>
+        <div class="all-surah_div--header">
+          <label for="allsurah">All Surah</label>
+          <!-- <input type="number" class="search-no" min="1" minlength="1" max="114" maxlength="3" placeholder="Surah No: "> -->
+          <select class="search-no" id="allsurah"> </select>
+          <span class="all-surah-nav"><i class="icon ico-minus"></i></span>
+        </div>
+        <div class="surahs"></div>
+      </div>
+
+      <div class="all-ayah_div">
+        <div class="loader">
+          <span><i class="icon ico-spinner"></i></span>
+        </div>
+        <div class="wraper">
+          <div class="surah-info">
+            <div class="revulation-place"><span></span></div>
+            <div class="name">
+              <h2></h2>
+              <p></p>
+            </div>
+            <div class="ayah-count"><span></span></div>
+          </div>
+          <div class="select-div" style="margin: 10px 0;">
+            <label for="ayah-count">All Ayah</label>
+            <select name="ayah-count" id="ayah-count"> </select>
+          </div>
+          <div
+            class="bismillah"
+            style="
+              background-image: url(./assets/img/570px-Bismillah_Calligraphy_2.svg.png);
+            "
+            data-audio="https://verses.quran.com/Rifai/mp3/001001.mp3"
+          ></div>
+          <div class="all-play-btn">
+            <div class="loader">
+              <span class="icon ico-spinner"></span>
+            </div>
+            <span class="icon ico-play"></span>
+          </div>
+        </div>
+        <div class="ayahs"></div>
+      </div>
+    </div>
+  </body>
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/clipboard.js/2.0.4/clipboard.min.js"></script>
+  <script src="js/utilities.js"></script>
+  <script src="js/staticElements.js"></script>
+  <script src="js/main.js"></script>
+  <script src="js/bookmarkJS.js"></script>
+  <script>
+    if ("serviceWorker" in navigator) {
+      navigator.serviceWorker.register("/sw.js").then(() => {
+        console.log("Worker is registred");
+      });
+    }
+  </script>
+</html>

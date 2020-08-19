@@ -1,0 +1,78 @@
+$black: #000;
+$white: #fff;
+// $primary: #2CA4AB;
+$primary: #1e8288;
+// $secondry: lighten(#3C4441 ,90%);
+// $trans-sec: lighten(#3C4441, 52%);
+// $trans-black: lighten(#000, 6%);
+$secondry: rgb(60, 68, 65);
+$third: #0c0c0cb3;
+$trans-sec: rgba(2, 8, 6, 0.103);
+$trans-black: rgba(0, 0, 0, 0.097);
+
+$allsuradiv: 454px;
+* {
+  padding: 0;
+  margin: 0;
+  outline: 0;
+  box-sizing: border-box;
+
+  &::-webkit-scrollbar {
+    width: 5px;
+  }
+
+  &::-webkit-scrollbar-thumb {
+    width: 100%;
+    background-color: $primary;
+  }
+}
+
+h1,
+h2,
+h3,
+h4,
+h5,
+h6,
+p,
+a {
+  font-size: 1rem;
+  font-weight: 400;
+  text-decoration: none;
+}
+
+a {
+  color: $secondry;
+}
+ul {
+  list-style: none;
+}
+
+select {
+  position: absolute;
+  top: 23px;
+  left: 120px;
+  height: 30px;
+  border-radius: 25px;
+  border: 0;
+  background-color: $trans-sec;
+  padding: 5px 10px;
+  font-size: 0.9rem;
+//   color: rgba(128, 128, 128, 0.892);
+  color: #0c0c0cb3;
+
+  option {
+    color: #0c0c0cb3;
+  }
+}
+@mixin transition_all($du: 0.4s) {
+  transition: all $du linear;
+}
+
+@keyframes load {
+  from {
+    transform: rotate(0deg);
+  }
+  to {
+    transform: rotate(360deg);
+  }
+}

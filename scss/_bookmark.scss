@@ -1,0 +1,99 @@
+.bookmark-div{
+    @include transition_all;
+    display: none;
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background-color: rgba($color: $white, $alpha: 1.0);
+    animation-fill-mode: both;
+    animation: slide_right .3s linear 1;
+    z-index: 100;
+    overflow: hidden;
+    overflow-y: auto;
+    &.open{
+        display: block;
+    }
+    .close-btn{
+        position: absolute;
+        top: 5px;
+        left: 5px;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        width: 40px;
+        height: 40px;
+        background-color: $primary;
+        color: $white;
+        border-radius: 50%;
+    }
+
+    .cetagory-scroller{
+        overflow-y: auto;
+        width: 100%;
+        height: 100%;
+        padding-top : 50px;
+        background-color: $white;
+    }
+    .cetagory-section{
+        // margin-top: 50px;
+        width: 100%;
+        padding-right: 10px;
+        .section-header{
+            position: relative;
+            h2{
+                font-size: 2rem;
+                color: $primary;
+                font-weight: 500;
+                padding: 5px 10px;
+            }
+
+            &::before{
+                content: '';
+                position: absolute;
+                bottom: 0;
+                left: 0;
+                width: 100%;
+                height: 3px;
+                background-color: $primary;
+            }
+        }
+
+      .section-items{
+          display: flex;
+          flex-wrap: wrap;
+        //   display: grid;
+        //   grid-template-columns: 1fr 1fr 1fr 1fr;
+      }  
+        .surah{
+            @extend .surah;
+            // justify-content: start;
+            border: 1px solid $secondry;
+            padding: 10px 15px;
+            .ayat-no{
+                // margin-left: 30px;
+                // margin-bottom: 5px;
+                .text{
+                    color: $primary;
+                    margin-left: 20px;
+                }
+                .no{
+                    font-size: 1.7rem;
+                    // margin-left: 10px;
+                }
+            }
+        }
+    }
+}
+
+@keyframes slide_right{
+    from{
+        visibility: hidden;
+        transform: translate(100%);
+    }
+    to{
+        visibility: visible;
+        transform: translate(0);
+    }
+}
