@@ -21,7 +21,7 @@ const Elements = {
 // const proxy = 'https://cors-anywhere.herokuapp.com/';
 // const proxy = 'http://www.whateverorigin.org/get?url=';
 const proxy = "";
-const host = `http://api.quran.com`;
+const host = `https://api.quran.com`;
 // const host = `https://quran.com/api`;
 const tmpurl = `${host}/api/v3`;
 const url = `${proxy}${tmpurl}`;
