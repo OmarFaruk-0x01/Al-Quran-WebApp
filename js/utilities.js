@@ -28,17 +28,17 @@ const url = `${proxy}${tmpurl}`;
 // console.log(url);
 const options = {
   method: "GET", // *GET, POST, PUT, DELETE, etc.
-  mode: "cors", // no-cors, *cors, same-origin
-  cache: "no-cache", // *default, no-cache, reload, force-cache, only-if-cached
-  credentials: "include", // include, *same-origin, omit
+  //mode: "cors", // no-cors, *cors, same-origin
+  //cache: "no-cache", // *default, no-cache, reload, force-cache, only-if-cached
+  //credentials: "include", // include, *same-origin, omit
   headers: {
     "Content-Type": "application/json; charset=utf-8",
-    "accept-ranges": "bytes",
-    "Access-Control-Allow-Origin": "http://127.0.0.1:5500/",
-    "Access-Control-Allow-Credentials": "true",
-    "Access-Control-Allow-Methods":
-      "OPTIONS, GET, POST, PUT, PATCH, DELETE, HEAD, LINK, UNLINK",
-    "Access-Control-Allow-Headers": "Content-Type",
+    //"accept-ranges": "bytes",
+   // "Access-Control-Allow-Origin": "http://127.0.0.1:5500/",
+    //"Access-Control-Allow-Credentials": "true",
+    //"Access-Control-Allow-Methods":
+     // "OPTIONS, GET, POST, PUT, PATCH, DELETE, HEAD, LINK, UNLINK",
+    //"Access-Control-Allow-Headers": "Content-Type",
     // "Cache-Control:":"max-age=31536000"
   },
   // redirect: "follow", // manual, *follow, error
