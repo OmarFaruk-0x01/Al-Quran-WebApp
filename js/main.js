@@ -203,7 +203,7 @@ async function loadAllAyah(surah_Id) {
 
     // stoploder("ayah");
 
-    for (let count = 2; count <= data.meta.total_pages; ++count) {
+    for (let count = 2; count <= data.pagination.total_pages; ++count) {
       // console.log("start");
       let tmpresp = await fetch(
         `${url}/chapters/${surah_Id}/verses?recitation=5&translations=24&language=bn&text_type=words&limit=286&page=${count}`,
